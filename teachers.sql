@@ -1,5 +1,10 @@
-INSERT INTO teachers(name, photo_url, nationality) VALUES('Yeah Yeah Yeahs', 'http://www.athousandguitars.com/wp-content/uploads/2013/04/yeah-yeah-yeahs.jpg', 'USA');
-INSERT INTO teachers(name, photo_url, nationality) VALUES('Nosaj Thing', 'http://wertn.com/wp-content/uploads/2012/04/Nosaj-Thing_Mondrian_CL_High-3487.jpg', 'USA');
-INSERT INTO teachers(name, photo_url, nationality) VALUES('Norah Jones', 'http://entertainmentrealm.files.wordpress.com/2012/05/norahjones1.jpg', 'USA');
-INSERT INTO teachers(name, photo_url, nationality) VALUES('Lykke Li', 'http://www.chartattack.com/wp-content/uploads/2012/07/lykke-li-newmain1-photo-by-daniel-jackson.jpg', 'Sweeden');
-INSERT INTO teachers(name, photo_url, nationality) VALUES('Kendrick Lamar', 'http://www.xxlmag.com/wp-content/uploads/2013/06/kendricklamar_001-1600.jpg', 'USA');
+insert into teachers (id, teachername, department) values (1, 'Marcile Hinkens', 'English');
+insert into teachers (id, teachername, department) values (2, 'Harper McCahill', 'Math');
+insert into teachers (id, teachername, department) values (3, 'Lon Armin', 'Computing');
+insert into teachers (id, teachername, department) values (4, 'Terri-jo Camelli', 'History');
+insert into teachers (id, teachername, department) values (5, 'Quillan Kermon', 'Physics');
+insert into teachers (id, teachername, department) values (6, 'Ezra Goathrop', 'English');
+insert into teachers (id, teachername, department) values (7, 'Dulci Episcopio', 'Biology');
+insert into teachers (id, teachername, department) values (8, 'Dorette Eyers', 'Math');
+insert into teachers (id, teachername, department) values (9, 'Mitchel Jacketts', 'Computing');
+insert into teachers (id, teachername, department) values (10, 'Faythe Dugall', 'Music');
