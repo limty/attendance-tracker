@@ -7,6 +7,6 @@ CREATE TABLE IF NOT EXISTS teachers (
 CREATE TABLE IF NOT EXISTS students (
     id SERIAL PRIMARY KEY,
     studentname TEXT,
-    class TEXT,
+    stud_class TEXT,
     teachers_id INT
 );

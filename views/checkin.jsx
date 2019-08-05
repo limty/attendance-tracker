@@ -26,7 +26,7 @@ class checkIn extends React.Component {
                 <tr>
                   <th scope="row">Class</th>
                   <td>
-                    <input type="text" name="class" />
+                    <input type="text" name="stud_class" />
                   </td>
                 </tr>
                 <tr>

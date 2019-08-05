@@ -53,7 +53,7 @@ app.get('/', (request, response) => {
     // query database for students
     //const queryString = "SELECT * from students";
     const queryString =
-      "SELECT students.id, students.studentname, students.class, teachers.teachername FROM students INNER JOIN teachers ON teachers.id = students.teachers_id";
+      "SELECT students.id, students.studentname, students.stud_class, teachers.department, teachers.teachername FROM students INNER JOIN teachers ON teachers.id = students.teachers_id";
     pool.query(queryString, (err, result) => {
       if (err) {
         console.error("query error:", err.stack);
@@ -82,10 +82,10 @@ app.post('/post-student', (req, res) => {
     //console.log()
     let id = parseInt(req.body.teacher);
     const queryString =
-      "INSERT INTO students (studentname, class, teachers_id) VALUES ($1,$2,$3)";
+      "INSERT INTO students (studentname, stud_class, teachers_id) VALUES ($1,$2,$3)";
     let arr = [
       req.body.studentname,
-      req.body.class,
+      req.body.stud_class,
       parseInt(req.body.teachers_id)
     ];
     pool.query(queryString, arr, (err, result) => {
