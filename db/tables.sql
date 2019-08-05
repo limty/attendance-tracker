@@ -1,6 +1,6 @@
 CREATE TABLE IF NOT EXISTS teachers (
     id SERIAL PRIMARY KEY,
-    name TEXT,
+    teachername TEXT,
     department TEXT
 );
 

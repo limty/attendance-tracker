@@ -5,7 +5,7 @@ class teachers extends React.Component {
        const list_of_teachers = this.props.teachers.map(teacher => {
          return (
            <li>
-             {teacher.id} | {teacher.name} |{" "}
+             {teacher.id} | {teacher.teachername} |{" "}
              {teacher.department}
            </li>
          );

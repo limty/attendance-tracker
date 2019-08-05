@@ -26,7 +26,7 @@ class addTeacher extends React.Component {
                 <tr>
                   <th scope="row">Name</th>
                   <td>
-                    <input type="text" name="name" />
+                    <input type="text" name="teachername" />
                   </td>
                 </tr>
                 <tr>

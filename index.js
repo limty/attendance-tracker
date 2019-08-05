@@ -51,8 +51,9 @@ app.engine('jsx', reactEngine);
 
 app.get('/', (request, response) => {
     // query database for students
-    const queryString = "SELECT * from students";
-
+    //const queryString = "SELECT * from students";
+    const queryString =
+      "SELECT students.id, students.studentname, students.class, teachers.teachername FROM students INNER JOIN teachers ON teachers.id = students.teachers_id";
     pool.query(queryString, (err, result) => {
       if (err) {
         console.error("query error:", err.stack);
@@ -131,8 +132,8 @@ app.post("/post-teacher", (req, res) => {
   //console.log()
   let id = parseInt(req.body.teacher);
   const queryString =
-    "INSERT INTO teachers (name, department, id) VALUES ($1,$2,$3)";
-  let arr = [req.body.name, req.body.department, parseInt(req.body.id)];
+    "INSERT INTO teachers (teachername, department, id) VALUES ($1,$2,$3)";
+  let arr = [req.body.teachername, req.body.department, parseInt(req.body.id)];
   pool.query(queryString, arr, (err, result) => {
     if (err) {
       console.error("query error:", err.stack);
