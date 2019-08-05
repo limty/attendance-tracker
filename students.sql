@@ -1,0 +1,2 @@
+ INSERT INTO songs(title, album, preview_link, artwork, teacher_id) VALUES('Maps', 'Fever to Tell', 'http://a1748.phobos.apple.com/us/r1000/074/Music/d4/97/e7/mzm.bigdtgoz.aac.p.m4a', 'http://a3.mzstatic.com/us/r30/Features/d6/ba/99/dj.homcvzwl.60x60-50.jpg', '1');
+ INSERT INTO songs(title, album, preview_link, artwork, teacher_id) VALUES('Heads Will Roll', 'It''s Blitz! (Deluxe Edition)', 'http://a308.phobos.apple.com/us/r1000/064/Music/9c/a6/3a/mzm.zgjjoqyj.aac.p.m4a', 'http://a1.mzstatic.com/us/r30/Music/4c/30/8c/mzi.gcicgujl.60x60-50.jpg', '1');
