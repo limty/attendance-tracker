@@ -3,7 +3,6 @@ console.log("starting up!!");
 const express = require('express');
 const methodOverride = require('method-override');
 const pg = require('pg');
-//var sha256 = require("js-sha256");
 
 // Initialise postgres client
 const configs = {
@@ -51,50 +50,35 @@ app.engine('jsx', reactEngine);
  */
 
 app.get('/', (request, response) => {
-    // query database for all pokemon
+    // query database for students
     const queryString = "SELECT * from students";
 
     pool.query(queryString, (err, result) => {
       if (err) {
         console.error("query error:", err.stack);
-        //response.send("query error");
+        response.send("query error");
       } else {
         //console.log("query result:", result);
         let data = {
         title: "Present Students",
         students: result.rows
         };
-        // redirect to home page
-        //response.render("home", data);
         response.render("home",data);
-        //response.send("Hello");
       }
     });
   });
 
-//add new song
+//add new Student
 app.get('/check-in', (req, res) => {
-    const queryString = 'SELECT * FROM teachers';
-    pool.query(queryString, (err, result) => {
+    let data = {
+      title: "Check In Student"
+    };
+    res.render("checkin", data);
+});
 
-        if (err) {
-            console.error('query error:', err.stack);
-            res.send('query error');
-        } else {
-            //let id = parseInt(req.params.id);
-            let data = {
-                title: "Check In Student",
-                teachers: result.rows
-            }
-            res.render("checkin", data);
-        }
-    });
-
-})
-
-//add new song POST
+//add new student POST
 app.post('/post-student', (req, res) => {
-    console.log()
+    //console.log()
     let id = parseInt(req.body.teacher);
     const queryString =
       "INSERT INTO students (studentname, class, teachers_id) VALUES ($1,$2,$3)";
@@ -113,7 +97,51 @@ app.post('/post-student', (req, res) => {
         }
     });
 
-})
+});
+
+app.get("/teachers", (request, response) => {
+  // query database for students
+  const queryString = "SELECT * from teachers";
+
+  pool.query(queryString, (err, result) => {
+    if (err) {
+      console.error("query error:", err.stack);
+      response.send("query error");
+    } else {
+      //console.log("query result:", result);
+      let data = {
+        title: "List of Teachers",
+        teachers: result.rows
+      };
+      response.render("teachers", data);
+    }
+  });
+});
+
+//add new Student
+app.get("/add-teacher", (req, res) => {
+  let data = {
+    title: "Add Teacher"
+  };
+  res.render("addTeacher", data);
+});
+
+//add new student POST
+app.post("/post-teacher", (req, res) => {
+  //console.log()
+  let id = parseInt(req.body.teacher);
+  const queryString =
+    "INSERT INTO teachers (name, department, id) VALUES ($1,$2,$3)";
+  let arr = [req.body.name, req.body.department, parseInt(req.body.id)];
+  pool.query(queryString, arr, (err, result) => {
+    if (err) {
+      console.error("query error:", err.stack);
+      res.send("query error");
+    } else {
+      res.redirect("/teachers");
+    }
+  });
+});
 
 /**
  * ===================================

@@ -5,16 +5,24 @@ class home extends React.Component {
        const list_of_students = this.props.students.map(student => {
          return (
            <li>
-             {student.studentname} | class: {student.class} | teacher ID: {student.teachers_id}
+             {student.studentname} | {student.class} | {student.teachers_id}
            </li>
          );
        });
 
        return (
          <div>
-         <h1>Present Students</h1>
+           <span>
+             <a href="/teachers">View Teachers</a>
+           </span>
+           <h1>Present Students</h1>
+
+           <ul>
+             <li>Name | Class | Teacher ID</li>
+           </ul>
            <ul>{list_of_students}</ul>
-        <a href="/check-in">Check-in Student</a>
+
+           <a href="/check-in">Check-in Student</a>
          </div>
        );
   }
