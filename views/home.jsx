@@ -5,7 +5,8 @@ class home extends React.Component {
        const list_of_students = this.props.students.map(student => {
          return (
            <li>
-             {student.studentname} | {student.department} | {student.stud_class} | {student.teachername}
+           {student.studentname} | {student.stud_class} | {student.teachers_id}
+             {/* {student.studentname} | {student.department} | {student.stud_class} | {student.teachername} */}
            </li>
          );
        });
