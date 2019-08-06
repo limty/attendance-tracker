@@ -19,7 +19,7 @@ class home extends React.Component {
            <h1>Present Students</h1>
 
            <ul>
-             <li>Name | Level | Class | Teacher in Charge</li>
+             <li>Name | Class | Teacher in Charge</li>
            </ul>
            <ul>{list_of_students}</ul>
 
