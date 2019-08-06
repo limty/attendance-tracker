@@ -7,6 +7,7 @@ class addTeacher extends React.Component {
     return (
       <html>
         <head>
+        <link href="style.css" rel="stylesheet"/>
           <title>{this.props.title}</title>
         </head>
         <body>
