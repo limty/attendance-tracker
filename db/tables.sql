@@ -8,4 +8,5 @@ CREATE TABLE IF NOT EXISTS students (
     id SERIAL PRIMARY KEY,
     stud_name TEXT,
     class_name TEXT
+    presence TEXT
 );

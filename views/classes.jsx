@@ -13,7 +13,7 @@ class classes extends React.Component {
        return (
          <div>
            <span>
-             <a href="/one-class">View Present Students</a>
+             <a href="/students">View Students</a>
            </span>
            <h1>List of Classes</h1>
 

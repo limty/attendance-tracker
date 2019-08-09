@@ -1,11 +1,19 @@
 var React = require("react");
 
-class oneClass extends React.Component {
+class students extends React.Component {
   render() {
        const list_of_students = this.props.students.map(student => {
+        let editUrl = "/student/" + student.id + "/edit";
+        let deleteUrl = "/student/" + student.id + "?_method=delete";
          return (
            <li>
-           {student.id} | {student.stud_name} | {student.class_name} Edit Delete
+             {student.id} | {student.stud_name} | {student.class_name}
+             <form action={editUrl}>
+               <input type="submit" value="Edit" />
+             </form>
+             <form method="POST" action={deleteUrl}>
+               <input type="submit" value="Delete" />
+             </form>
            </li>
          );
        });
@@ -28,4 +36,4 @@ class oneClass extends React.Component {
   }
 }
 
-module.exports = oneClass;
+module.exports = students;

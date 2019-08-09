@@ -49,7 +49,7 @@ app.engine('jsx', reactEngine);
  * ===================================
  */
 
-app.get('/one-class', (request, response) => {
+app.get('/students', (request, response) => {
     // query database for students
     const queryString = "SELECT * from students";
     // const queryString =
@@ -64,7 +64,7 @@ app.get('/one-class', (request, response) => {
         title: "Students",
         students: result.rows
         };
-        response.render("oneClass",data);
+        response.render("students",data);
       }
     });
   });
@@ -93,27 +93,27 @@ app.post('/post-student', (req, res) => {
             console.error('query error:', err.stack);
             res.send('query error');
         } else {
-            res.redirect('/one-class');
+            res.redirect('/students');
         }
     });
 
 });
 
-app.get("/classes", (request, response) => {
+app.get("/classes", (req, res) => {
   // query database for students
   const queryString = "SELECT * from stud_class";
 
   pool.query(queryString, (err, result) => {
     if (err) {
       console.error("query error:", err.stack);
-      response.send("query error");
+      res.send("query error");
     } else {
       //console.log("query result:", result);
       let data = {
         title: "List of Classes",
         classes: result.rows
       };
-      response.render("classes", data);
+      res.render("classes", data);
     }
   });
 });
