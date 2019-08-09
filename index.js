@@ -6,8 +6,7 @@ const pg = require('pg');
 
 // Initialise postgres client
 const configs = {
-  user: 'postgres',
-  password: 'password',
+  user: 'lty',
   host: '127.0.0.1',
   database: 'attendance',
   port: 5432,
