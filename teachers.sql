@@ -1,9 +1,0 @@
-insert into teachers (id, teachername, department) values (1, 'Marcile Hinkens', 'Level 1');
-insert into teachers (id, teachername, department) values (2, 'Harper McCahill', 'Level 1');
-insert into teachers (id, teachername, department) values (3, 'Lon Armin', 'Level 1');
-insert into teachers (id, teachername, department) values (4, 'Terri-jo Camelli', 'Level 2');
-insert into teachers (id, teachername, department) values (5, 'Quillan Kermon', 'Level 2');
-insert into teachers (id, teachername, department) values (6, 'Ezra Goathrop', 'Level 2');
-insert into teachers (id, teachername, department) values (7, 'Dulci Episcopio', 'Level 3');
-insert into teachers (id, teachername, department) values (8, 'Dorette Eyers', 'Level 3');
-insert into teachers (id, teachername, department) values (9, 'Mitchel Jacketts', 'Level 3');

@@ -1,16 +1,16 @@
 var React = require("react");
 //var Default = require("./layout/default");
 
-class checkIn extends React.Component {
+class addStudent extends React.Component {
   render() {
-    let posturl = '/post-student'
+    let posturl = "/post-student";
     return (
       <html>
         <head>
           <title>{this.props.title}</title>
         </head>
         <body>
-          <div style={{textAlign: 'center'}}>
+          <div style={{ textAlign: "center" }}>
             <h1>Check In Student</h1>
             <form method="POST" action={posturl}>
               <table
@@ -20,19 +20,13 @@ class checkIn extends React.Component {
                 <tr>
                   <th scope="row">Name</th>
                   <td>
-                    <input type="text" name="studentname" />
+                    <input type="text" name="stud_name" />
                   </td>
                 </tr>
                 <tr>
                   <th scope="row">Class</th>
                   <td>
-                    <input type="text" name="stud_class" />
-                  </td>
-                </tr>
-                <tr>
-                  <th scope="row">Teacher ID</th>
-                  <td>
-                    <input type="text" name="teachers_id" />
+                    <input type="text" name="class_name" />
                   </td>
                 </tr>
               </table>
@@ -46,4 +40,4 @@ class checkIn extends React.Component {
   }
 }
 
-module.exports = checkIn;
+module.exports = addStudent;

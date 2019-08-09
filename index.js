@@ -49,7 +49,7 @@ app.engine('jsx', reactEngine);
  * ===================================
  */
 
-app.get('/', (request, response) => {
+app.get('/one-class', (request, response) => {
     // query database for students
     const queryString = "SELECT * from students";
     // const queryString =
@@ -61,32 +61,31 @@ app.get('/', (request, response) => {
       } else {
         //console.log("query result:", result);
         let data = {
-        title: "Present Students",
+        title: "Students",
         students: result.rows
         };
-        response.render("home",data);
+        response.render("oneClass",data);
       }
     });
   });
 
 //add new Student
-app.get('/check-in', (req, res) => {
+app.get('/add-student', (req, res) => {
     let data = {
-      title: "Check In Student"
+      title: "Add Student"
     };
-    res.render("checkin", data);
+    res.render("addStudent", data);
 });
 
 //add new student POST
 app.post('/post-student', (req, res) => {
     //console.log()
-    let id = parseInt(req.body.teacher);
+    //let id = parseInt(req.body.teacher);
     const queryString =
-      "INSERT INTO students (studentname, stud_class, teachers_id) VALUES ($1,$2,$3)";
+      "INSERT INTO students (stud_name, class_name) VALUES ($1,$2)";
     let arr = [
-      req.body.studentname,
-      req.body.stud_class,
-      parseInt(req.body.teachers_id)
+      req.body.stud_name,
+      req.body.class_name
     ];
     pool.query(queryString, arr, (err, result) => {
 
@@ -94,15 +93,15 @@ app.post('/post-student', (req, res) => {
             console.error('query error:', err.stack);
             res.send('query error');
         } else {
-            res.redirect('/');
+            res.redirect('/one-class');
         }
     });
 
 });
 
-app.get("/teachers", (request, response) => {
+app.get("/classes", (request, response) => {
   // query database for students
-  const queryString = "SELECT * from teachers";
+  const queryString = "SELECT * from stud_class";
 
   pool.query(queryString, (err, result) => {
     if (err) {
@@ -111,35 +110,35 @@ app.get("/teachers", (request, response) => {
     } else {
       //console.log("query result:", result);
       let data = {
-        title: "List of Teachers",
-        teachers: result.rows
+        title: "List of Classes",
+        classes: result.rows
       };
-      response.render("teachers", data);
+      response.render("classes", data);
     }
   });
 });
 
 //add new Student
-app.get("/add-teacher", (req, res) => {
+app.get("/add-class", (req, res) => {
   let data = {
-    title: "Add Teacher"
+    title: "Add class"
   };
-  res.render("addTeacher", data);
+  res.render("addClass", data);
 });
 
 //add new student POST
-app.post("/post-teacher", (req, res) => {
+app.post("/post-class", (req, res) => {
   //console.log()
-  let id = parseInt(req.body.teacher);
+  //let id = parseInt(req.body.teacher);
   const queryString =
-    "INSERT INTO teachers (teachername, department, id) VALUES ($1,$2,$3)";
-  let arr = [req.body.teachername, req.body.department, parseInt(req.body.id)];
+    "INSERT INTO stud_class (class_name, form_teacher) VALUES ($1,$2)";
+  let arr = [req.body.class_name, req.body.form_teacher];
   pool.query(queryString, arr, (err, result) => {
     if (err) {
       console.error("query error:", err.stack);
       res.send("query error");
     } else {
-      res.redirect("/teachers");
+      res.redirect("/classes");
     }
   });
 });

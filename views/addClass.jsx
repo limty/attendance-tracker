@@ -1,9 +1,9 @@
 var React = require("react");
 //var Default = require("./layout/default");
 
-class addTeacher extends React.Component {
+class addClass extends React.Component {
   render() {
-    let posturl = "/post-teacher";
+    let posturl = "/post-class";
     return (
       <html>
         <head>
@@ -12,28 +12,22 @@ class addTeacher extends React.Component {
         </head>
         <body>
           <div style={{ textAlign: "center" }}>
-            <h1>Add Teacher</h1>
+            <h1>Add Class</h1>
             <form method="POST" action={posturl}>
               <table
                 className="table table-bordered"
                 style={{ margin: "0 auto" }}
               >
                 <tr>
-                  <th scope="row">ID</th>
+                  <th scope="row">Class</th>
                   <td>
-                    <input type="text" name="id" />
+                    <input type="text" name="class_name" />
                   </td>
                 </tr>
                 <tr>
-                  <th scope="row">Name</th>
+                  <th scope="row">Form Teacher</th>
                   <td>
-                    <input type="text" name="teachername" />
-                  </td>
-                </tr>
-                <tr>
-                  <th scope="row">Department</th>
-                  <td>
-                    <input type="text" name="department" />
+                    <input type="text" name="form_teacher" />
                   </td>
                 </tr>
               </table>
@@ -47,4 +41,4 @@ class addTeacher extends React.Component {
   }
 }
 
-module.exports = addTeacher;
+module.exports = addClass;

@@ -1,12 +1,11 @@
-CREATE TABLE IF NOT EXISTS teachers (
+CREATE TABLE IF NOT EXISTS stud_class (
     id SERIAL PRIMARY KEY,
-    teachername TEXT,
-    department TEXT
+    class_name TEXT,
+    form_teacher TEXT
 );
 
 CREATE TABLE IF NOT EXISTS students (
     id SERIAL PRIMARY KEY,
-    studentname TEXT,
-    stud_class TEXT,
-    teachers_id INT
+    stud_name TEXT,
+    class_name TEXT
 );
