@@ -7,6 +7,6 @@ CREATE TABLE IF NOT EXISTS stud_class (
 CREATE TABLE IF NOT EXISTS students (
     id SERIAL PRIMARY KEY,
     stud_name TEXT,
-    class_name TEXT
-    presence TEXT
+    class_name TEXT,
+    presence TEXT DEFAULT '0'
 );

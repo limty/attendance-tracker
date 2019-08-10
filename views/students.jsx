@@ -5,16 +5,36 @@ class students extends React.Component {
        const list_of_students = this.props.students.map(student => {
         let editUrl = "/student/" + student.id + "/edit";
         let deleteUrl = "/student/" + student.id + "?_method=delete";
+        let editAbsentUrl = "";
+        let editPresentUrl = "";
+
          return (
-           <li>
-             {student.id} | {student.stud_name} | {student.class_name}
-             <form action={editUrl}>
-               <input type="submit" value="Edit" />
-             </form>
-             <form method="POST" action={deleteUrl}>
-               <input type="submit" value="Delete" />
-             </form>
-           </li>
+           <tr>
+             <td>{student.id}</td>
+             <td>{student.stud_name}</td>
+             <td>{student.class_name}</td>
+             <td>{student.presence}</td>
+             <td>
+               <form action={editUrl}>
+                 <input type="submit" value="Edit" />
+               </form>
+             </td>
+             <td>
+               <form method="POST" action={deleteUrl}>
+                 <input type="submit" value="Delete" />
+               </form>
+             </td>
+             <td>
+               <form action={editAbsentUrl}>
+                 <input type="submit" value="Absent" />
+               </form>
+             </td>
+             <td>
+               <form action={editPresentUrl}>
+                 <input type="submit" value="Present" />
+               </form>
+             </td>
+           </tr>
          );
        });
 
@@ -24,13 +44,41 @@ class students extends React.Component {
              <a href="/classes">View Classes</a>
            </span>
            <h1>Present Students</h1>
-
-           <ul>
-             <li>No. | Name | Class</li>
-           </ul>
-           <ul>{list_of_students} </ul>
-
-           <a href="/add-student">Add Student</a>
+           <a href="/add-student">
+             <button>Add Student</button>
+           </a>
+           <p />
+           <table>
+             <tbody>
+               <tr>
+                 <td>
+                   <h3>No.</h3>
+                 </td>
+                 <td>
+                   <h3>Name</h3>
+                 </td>
+                 <td>
+                   <h3>Class</h3>
+                 </td>
+                 <td>
+                   <h3>Presence</h3>
+                 </td>
+                 <td>
+                   <h3>&nbsp;</h3>
+                 </td>
+                 <td>
+                   <h3>&nbsp;</h3>
+                 </td>
+                 <td>
+                   <h3>&nbsp;</h3>
+                 </td>
+                 <td>
+                   <h3>&nbsp;</h3>
+                 </td>
+               </tr>
+               {list_of_students}
+             </tbody>
+           </table>
          </div>
        );
   }
