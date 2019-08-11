@@ -12,10 +12,9 @@ class editStudent extends React.Component {
           <title>{this.props.title}</title>
         </head>
         <body>
-          <div className="solo-artist">
-            <img className="artist-pic" src={item.photo_url} />
+          <div className="">
             <form method="POST" action={actionUrl}>
-              <table className="table table-bordered">
+              <table className="">
                 <tr>
                   <th scope="row">Name</th>
                   <td>

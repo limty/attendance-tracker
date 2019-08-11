@@ -194,6 +194,18 @@ app.put("/students/:id", (req, res) => {
   });
 });
 
+app.delete("/students/:id", (req, res) => {
+  const queryString = "DELETE from students WHERE id=" + parseInt(req.params.id);
+  pool.query(queryString, (err, result) => {
+    if (err) {
+      console.error("query error:", err.stack);
+      res.send("query error");
+    } else {
+      res.redirect("/students");
+    }
+  });
+});
+
 /**
  * ===================================
  * Listen to requests on port 3000
