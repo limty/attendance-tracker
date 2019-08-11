@@ -143,6 +143,53 @@ app.post("/post-class", (req, res) => {
   });
 });
 
+//edit student
+app.get('/students/:id/edit', (req, res) => {
+
+    const queryString = 'SELECT * from students WHERE id=' + parseInt(req.params.id);
+
+    pool.query(queryString, (err, result) => {
+
+        if (err) {
+            console.error('query error:', err.stack);
+            res.send('query error');
+        } else {
+            //let cookieLogin = (sha256(req.cookies["user_id"] + 'logged_in' + SALT) === req.cookies["logged_in"]) ? true : false;
+            let data = {
+                title: result.rows[0].name,
+                students: result.rows[0]
+                //cookieLogin: cookieLogin
+            };
+            res.render("editStudent", data);
+        }
+    });
+});
+
+//edit student PUT
+app.put("/students/:id", (req, res) => {
+//REDO THESE LINES
+    //   const queryString =
+//     "UPDATE artists SET name=$1,nationality=$2,photo_url=$3 WHERE id =" +
+//     parseInt(req.params.id) +
+//     "RETURNING *";
+//   let arr = [req.body.name, req.body.nationality, req.body.photo_url];
+  pool.query(queryString, arr, (err, result) => {
+    if (err) {
+      console.error("query error:", err.stack);
+      res.send("query error");
+    } else {
+      //let cookieLogin = (sha256(req.cookies["user_id"] + 'logged_in' + SALT) === req.cookies["logged_in"]) ? true : false;
+      let data = {
+        title: result.rows[0].name,
+        students: result.rows[0]
+        //cookieLogin: cookieLogin
+      };
+
+      res.render("students", data);
+    }
+  });
+});
+
 /**
  * ===================================
  * Listen to requests on port 3000
