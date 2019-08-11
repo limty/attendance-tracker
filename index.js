@@ -51,7 +51,7 @@ app.engine('jsx', reactEngine);
 
 app.get('/students', (request, response) => {
     // query database for students
-    const queryString = "SELECT * from students ORDER BY id";
+    const queryString = "SELECT students.id, students.stud_name, students.class_name, students.presence, stud_class.id, stud_class.class_name, stud_class.form_teacher FROM students LEFT JOIN stud_class ON students.class_name = stud_class.class_name ORDER BY students.id";
     // const queryString =
     //   "SELECT students.id, students.studentname, students.stud_class, teachers.department, teachers.teachername FROM students INNER JOIN teachers ON teachers.id = students.teachers_id";
     pool.query(queryString, (err, result) => {

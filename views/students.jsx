@@ -13,6 +13,7 @@ class students extends React.Component {
           <td>{student.id}</td>
           <td>{student.stud_name}</td>
           <td>{student.class_name}</td>
+          <td>{student.form_teacher}</td>
           <td>{student.presence}</td>
           <td>
             <form action={editUrl}>
@@ -64,6 +65,9 @@ class students extends React.Component {
                 </td>
                 <td>
                   <h3>Class</h3>
+                </td>
+                <td>
+                  <h3>Form Teacher</h3>
                 </td>
                 <td>
                   <h3>Presence</h3>
