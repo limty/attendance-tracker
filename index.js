@@ -51,7 +51,7 @@ app.engine('jsx', reactEngine);
 
 app.get('/students', (request, response) => {
     // query database for students
-    const queryString = "SELECT * from students";
+    const queryString = "SELECT * from students ORDER BY id";
     // const queryString =
     //   "SELECT students.id, students.studentname, students.stud_class, teachers.department, teachers.teachername FROM students INNER JOIN teachers ON teachers.id = students.teachers_id";
     pool.query(queryString, (err, result) => {
@@ -156,7 +156,7 @@ app.get('/students/:id/edit', (req, res) => {
         } else {
             //let cookieLogin = (sha256(req.cookies["user_id"] + 'logged_in' + SALT) === req.cookies["logged_in"]) ? true : false;
             let data = {
-                title: result.rows[0].name,
+                title: result.rows[0].stud_name,
                 students: result.rows[0]
                 //cookieLogin: cookieLogin
             };
@@ -167,12 +167,14 @@ app.get('/students/:id/edit', (req, res) => {
 
 //edit student PUT
 app.put("/students/:id", (req, res) => {
-//REDO THESE LINES
-    //   const queryString =
-//     "UPDATE artists SET name=$1,nationality=$2,photo_url=$3 WHERE id =" +
-//     parseInt(req.params.id) +
-//     "RETURNING *";
-//   let arr = [req.body.name, req.body.nationality, req.body.photo_url];
+
+      const queryString =
+    "UPDATE students SET stud_name=$1, class_name=$2 WHERE id =" +
+    parseInt(req.params.id) +
+    "RETURNING *";
+  let arr = [req.body.stud_name, req.body.class_name];
+
+
   pool.query(queryString, arr, (err, result) => {
     if (err) {
       console.error("query error:", err.stack);
@@ -180,12 +182,14 @@ app.put("/students/:id", (req, res) => {
     } else {
       //let cookieLogin = (sha256(req.cookies["user_id"] + 'logged_in' + SALT) === req.cookies["logged_in"]) ? true : false;
       let data = {
-        title: result.rows[0].name,
+        title: result.rows[0].stud_name,
         students: result.rows[0]
         //cookieLogin: cookieLogin
       };
-
-      res.render("students", data);
+      console.log(result);
+      res.redirect("/students");
+      //res.render("students", data);
+      //res.render("students");
     }
   });
 });

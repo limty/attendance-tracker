@@ -3,8 +3,8 @@ var React = require("react");
 class students extends React.Component {
   render() {
        const list_of_students = this.props.students.map(student => {
-        let editUrl = "/student/" + student.id + "/edit";
-        let deleteUrl = "/student/" + student.id + "?_method=delete";
+        let editUrl = "/students/" + student.id + "/edit";
+        let deleteUrl = "/students/" + student.id + "?_method=delete";
         let editAbsentUrl = "";
         let editPresentUrl = "";
 
