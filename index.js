@@ -204,6 +204,59 @@ app.delete("/students/:id", (req, res) => {
   });
 });
 
+app.put("/students/:id/present", (req, res) => {
+  const queryString =
+    "UPDATE students SET presence=$1 WHERE id =" +
+    parseInt(req.params.id) ;
+    //+ "RETURNING *";
+  let arr = ['1'];
+    //res.send(req.body);
+  pool.query(queryString, arr, (err, result) => {
+    if (err) {
+      console.error("query error:", err.stack);
+      res.send("query error");
+      //  res.send(arr);
+    } else {
+      //let cookieLogin = (sha256(req.cookies["user_id"] + 'logged_in' + SALT) === req.cookies["logged_in"]) ? true : false;
+    //   let data = {
+    //     title: result.rows[0].stud_name,
+    //     students: result.rows[0]
+    //     //cookieLogin: cookieLogin
+    //   };
+    //   console.log(result);
+      res.redirect("/students");
+      //res.render("students", data);
+      //res.render("students");
+    }
+  });
+});
+
+app.put("/students/:id/absent", (req, res) => {
+  const queryString =
+    "UPDATE students SET presence=$1 WHERE id =" + parseInt(req.params.id);
+  //+ "RETURNING *";
+  let arr = ["0"];
+  //res.send(req.body);
+  pool.query(queryString, arr, (err, result) => {
+    if (err) {
+      console.error("query error:", err.stack);
+      res.send("query error");
+      //  res.send(arr);
+    } else {
+      //let cookieLogin = (sha256(req.cookies["user_id"] + 'logged_in' + SALT) === req.cookies["logged_in"]) ? true : false;
+      //   let data = {
+      //     title: result.rows[0].stud_name,
+      //     students: result.rows[0]
+      //     //cookieLogin: cookieLogin
+      //   };
+      //   console.log(result);
+      res.redirect("/students");
+      //res.render("students", data);
+      //res.render("students");
+    }
+  });
+});
+
 /**
  * ===================================
  * Listen to requests on port 3000

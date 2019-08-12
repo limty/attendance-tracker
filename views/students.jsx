@@ -5,8 +5,8 @@ class students extends React.Component {
     const list_of_students = this.props.students.map(student => {
       let editUrl = "/students/" + student.id + "/edit";
       let deleteUrl = "/students/" + student.id + "?_method=delete";
-      let editAbsentUrl = "";
-      let editPresentUrl = "";
+      let editAbsentUrl = "/students/" + student.id + "/absent?_method=PUT";
+      let editPresentUrl = "/students/" + student.id + "/present?_method=PUT";
 
       return (
         <tr>
@@ -26,12 +26,12 @@ class students extends React.Component {
             </form>
           </td>
           <td>
-            <form action={editAbsentUrl}>
+            <form method="POST" action={editAbsentUrl}>
               <input type="submit" value="Absent" />
             </form>
           </td>
           <td>
-            <form action={editPresentUrl}>
+            <form method="POST" action={editPresentUrl}>
               <input type="submit" value="Present" />
             </form>
           </td>
