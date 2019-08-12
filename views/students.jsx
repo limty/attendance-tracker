@@ -16,24 +16,23 @@ class students extends React.Component {
           <td>{student.form_teacher}</td>
           <td>{student.presence}</td>
           <td>
-            <form action={editUrl}>
-              <input type="submit" value="Edit" />
-            </form>
-          </td>
-          <td>
-            <form method="POST" action={deleteUrl}>
-              <input type="submit" value="Delete" />
-            </form>
-          </td>
-          <td>
-            <form method="POST" action={editAbsentUrl}>
-              <input type="submit" value="Absent" />
-            </form>
-          </td>
-          <td>
-            <form method="POST" action={editPresentUrl}>
-              <input type="submit" value="Present" />
-            </form>
+            <div class="px-3 row">
+              <form action={editUrl}>
+                <input type="submit" value="Edit" />
+              </form>
+
+              <form method="POST" action={deleteUrl}>
+                <input type="submit" value="Delete" />
+              </form>
+
+              <form method="POST" action={editAbsentUrl}>
+                <input type="submit" value="Absent" />
+              </form>
+
+              <form method="POST" action={editPresentUrl}>
+                <input type="submit" value="Present" />
+              </form>
+            </div>
           </td>
         </tr>
       );
@@ -42,52 +41,55 @@ class students extends React.Component {
     return (
       <html>
         <head>
-          <link href="style.css" rel="stylesheet" />
           <title>{this.props.title}</title>
+          <link
+            rel="stylesheet"
+            href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          />
+          <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js" />
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" />
+          <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" />
+          <link href="style.css" rel="stylesheet" />
         </head>
         <body>
-          <span>
-            <a href="/classes">View Classes</a>
-          </span>
-          <h1>Students</h1>
-          <a href="/add-student">
-            <button>Add Student</button>
-          </a>
-          <p />
-          <table>
-            <tbody>
-              <tr>
-                <td>
-                  <h3>No.</h3>
-                </td>
-                <td>
-                  <h3>Name</h3>
-                </td>
-                <td>
-                  <h3>Class</h3>
-                </td>
-                <td>
-                  <h3>Form Teacher</h3>
-                </td>
-                <td>
-                  <h3>Presence</h3>
-                </td>
-                <td>
-                  <h3>&nbsp;</h3>
-                </td>
-                <td>
-                  <h3>&nbsp;</h3>
-                </td>
-                <td>
-                  <h3>&nbsp;</h3>
-                </td>
-                <td>
-                  <h3>&nbsp;</h3>
-                </td>
-              </tr>
-              {list_of_students}
-            </tbody>
-          </table>
+          <nav class="navbar navbar-expand-sm bg-success navbar-dark">
+            <a class="navbar-brand" href="#">
+              Class Attendance
+            </a>
+            <ul class="navbar-nav">
+              <li class="nav-item active">
+                <a class="nav-link" href="#">
+                  Students
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/classes">
+                  Classes
+                </a>
+              </li>
+            </ul>
+          </nav>
+          <div class="class-att-table">
+            <h1>Students</h1>
+            <a href="/add-student">
+              <button>Add Student</button>
+            </a>
+            <p />
+
+            <table class="table table-bordered">
+              <tbody>
+                <tr>
+                  <th>No.</th>
+                  <th>Name</th>
+                  <th>Class</th>
+                  <th>Form Teacher</th>
+                  <th>Presence</th>
+                  <th>Action</th>
+                </tr>
+                {list_of_students}
+              </tbody>
+            </table>
+          </div>
         </body>
       </html>
     );

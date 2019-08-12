@@ -12,7 +12,7 @@ class addStudent extends React.Component {
         </head>
         <body>
           <div style={{ textAlign: "center" }}>
-            <h1>Check In Student</h1>
+            <h1>Add Student</h1>
             <form method="POST" action={posturl}>
               <table
                 className="table table-bordered"
