@@ -53,12 +53,12 @@ class students extends React.Component {
         </head>
         <body>
           <nav class="navbar navbar-expand-sm bg-success navbar-dark">
-            <a class="navbar-brand" href="#">
+            <a class="navbar-brand" href="/">
               Class Attendance
             </a>
             <ul class="navbar-nav">
               <li class="nav-item active">
-                <a class="nav-link" href="#">
+                <a class="nav-link" href="/students">
                   Students
                 </a>
               </li>
