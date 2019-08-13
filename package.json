@@ -4,7 +4,8 @@
   "description": "We're going to be building Tunr, the worlds #1 music catalog / player (those Spotify haters can't keep up with us).",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
   },
   "repository": {
     "type": "git",
@@ -21,5 +22,8 @@
     "react": "^16.5.2",
     "react-dom": "^16.5.2",
     "sha256": "^0.2.0"
-  }
+  },
+  "engines": {
+    "node": "^6.6.0"
+}
 }
