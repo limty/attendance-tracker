@@ -15,7 +15,7 @@ https://ga-sei-project-2-lty.herokuapp.com/
 ![alt text](https://github.com/limty/project-2/blob/master/wireframes/wireframe.jpg)
 
 ---
-##Screenshots
+## Screenshots
 
 ### Main Page
 ![alt text](https://github.com/limty/project-2/blob/master/screenshots/main_screen.png)
@@ -33,7 +33,7 @@ https://ga-sei-project-2-lty.herokuapp.com/
 ![alt text](https://github.com/limty/project-2/blob/master/screenshots/add_class.png)
 
 ---
-##Future Expansions
+## Future Expansions
 - User Login
 - Events Management
 - Class Randomiser for pair work
