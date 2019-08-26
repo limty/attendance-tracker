@@ -12,7 +12,7 @@ https://ga-sei-project-2-lty.herokuapp.com/
 
 ---
 ## Wireframes
-![alt text](https://github.com/limty/project-2/blob/master/wireframes/wireframe.jpg)
+![alt text](https://github.com/limty/project-2/blob/master/wireframe.jpg)
 
 ---
 ## Screenshots
