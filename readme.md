@@ -11,10 +11,6 @@ https://ga-sei-project-2-lty.herokuapp.com/
 -   Bootstrap
 
 ---
-## Wireframes
-![alt text](https://github.com/limty/project-2/blob/master/wireframe.jpg)
-
----
 ## Screenshots
 
 ### Main Page
@@ -37,3 +33,7 @@ https://ga-sei-project-2-lty.herokuapp.com/
 - User Login
 - Events Management
 - Class Randomiser for pair work
+
+---
+## Wireframes
+![alt text](https://github.com/limty/project-2/blob/master/wireframe.jpg)
