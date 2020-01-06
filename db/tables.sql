@@ -10,3 +10,8 @@ CREATE TABLE IF NOT EXISTS students (
     class_name TEXT,
     presence TEXT DEFAULT '0'
 );
+
+CREATE TABLE IF NOT EXISTS users (
+    id SERIAL PRIMARY KEY,                       name TEXT,
+    password TEXT
+);

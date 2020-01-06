@@ -8,6 +8,8 @@ const pg = require('pg');
 //this comes with node, so no need to yarn add
 const url = require('url');
 
+const cookieParser = require("cookie-parser");
+
 //check to see if we have this heroku environment variable
 if( process.env.DATABASE_URL ){
 
@@ -69,6 +71,8 @@ const reactEngine = require('express-react-views').createEngine();
 app.set('views', __dirname + '/views');
 app.set('view engine', 'jsx');
 app.engine('jsx', reactEngine);
+
+app.use(cookieParser());
 
 /**
  * ===================================
