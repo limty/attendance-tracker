@@ -1,17 +1,13 @@
 {
-  "name": "tunr_express",
+  "name": "attandance-tracker",
   "version": "1.0.0",
-  "description": "We're going to be building Tunr, the worlds #1 music catalog / player (those Spotify haters can't keep up with us).",
+  "description": "Easily Take Atttedance and Manage Students' attendance.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node index.js"
   },
-  "repository": {
-    "type": "git",
-    "url": "https://git.generalassemb.ly/ga-wdi-exercises/tunr_sinatra.git"
-  },
-  "author": "",
+  "author": "LTY",
   "license": "ISC",
   "dependencies": {
     "cookie-parser": "^1.4.4",

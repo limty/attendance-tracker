@@ -1,7 +1,7 @@
 # Attendance List (GA Project 2)
 Class Attendance - Easily Take Atttedance and Manage Students' attendance.
 
-https://ga-sei-project-2-lty.herokuapp.com/
+https://lty-attendance-tracker.herokuapp.com/
 
 ---
 ## Technologies used
